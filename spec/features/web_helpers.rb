@@ -11,5 +11,6 @@ def sign_up
   expect(page.status_code).to eq(200)
   fill_in('email', with: 'banana@gmail.com')
   fill_in('password', with: '123banana')
+  fill_in('password_confirmation', with: '123banana')
   click_button('Sign up')
 end

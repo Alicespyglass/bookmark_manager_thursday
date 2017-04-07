@@ -6,5 +6,15 @@ feature 'Sign Up' do
     expect(User.first.email).to eq('banana@gmail.com')
   end
 
+  scenario "if passwords don't match then don't make a new user" do
+    user_count = User.all.length
+    visit '/users/new'
+    fill_in('email', with: 'banana@gmail.com')
+    fill_in('password', with: '123banana')
+    fill_in('password_confirmation', with: '123')
+    click_button('Sign up')
+    expect(User.count).to eq(user_count)
+  end
+
 
 end
