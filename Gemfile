@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.3'
 
+gem 'bundle'
 gem 'bcrypt'
 gem 'sinatra'
 gem 'data_mapper'
