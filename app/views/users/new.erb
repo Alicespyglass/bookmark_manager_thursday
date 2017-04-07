@@ -3,7 +3,9 @@
   Email:  <input type='text' name='email' id='email'>
   Password: <input type='text' name='password' id='password'>
   Confirm Password: <input type='text' name='password_confirmation' id='password_confirmation'>
-
+  <%if @invalid_user%>
+    Password and confirmation password don't match
+  <%end%>
   <input type='submit' value='Sign up'>
 
 </form>
