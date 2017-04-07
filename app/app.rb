@@ -42,7 +42,7 @@ class BookmarkManager < Sinatra::Base
 
   get '/users/new' do
     @invalid_user = flash[:invalid_user?]
-    require 'pry'; binding.pry
+    @email = flash[:email]
     erb :'users/new'
   end
 
@@ -55,6 +55,7 @@ class BookmarkManager < Sinatra::Base
       redirect to('/links')
     else
       flash[:invalid_user?] = true
+      flash[:email] = params[:email]
       redirect to('/users/new')
     end
   end
